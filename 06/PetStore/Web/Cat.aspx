@@ -10,6 +10,7 @@
               <asp:Label for="tb_Name" ID="lbl_Name" runat="server" Text="Name" class="col-sm-2 col-form-label"></asp:Label>
             <div class="col-sm-10">
                 <asp:TextBox ID="tb_Name" runat="server" class="form-control" placeholder="Please enter the name of the cat"></asp:TextBox>
+
             </div>
           </div>
           <div class="form-group row">
@@ -21,8 +22,10 @@
             <div class="form-group row">
               <asp:Label for="Gender" ID="lbl_Gender" runat="server" Text="Gender" class="col-sm-2 col-form-label"></asp:Label>
             <div class="col-sm-10">
-                <asp:RadioButton ID="rb_Male" GroupName="Gender" Text="Male" runat="server" />
-                <asp:RadioButton ID="rb_Female" GroupName="Gender" Text="Female" runat="server" />
+                <asp:RadioButtonList ID="rbl_Gender" runat="server">
+                    <asp:ListItem Text="Male" Value="1"></asp:ListItem>
+                    <asp:ListItem Text="Female" Value="2"></asp:ListItem>
+                </asp:RadioButtonList>
             </div>
           </div>
             <div class="form-group row">
@@ -56,7 +59,6 @@
               </asp:GridView>
               <br />
               <asp:Button ID="btn_updateDB" class="btn btn-primary" runat="server" Text="Update in DataBase" OnClick="btn_updateDB_Click" />
-
           </div>
 
             <asp:Label ID="lbl_Display" runat="server" Text=""></asp:Label>
