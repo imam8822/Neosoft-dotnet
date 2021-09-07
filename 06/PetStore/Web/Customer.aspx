@@ -2,6 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <form>
+        <asp:ValidationSummary ID="ValidationSummary1" runat="server" DisplayMode="BulletList" HeaderText="Errors:" ForeColor="Red" />
         <div class="form-group">
             <asp:Label ID="Label1" runat="server" Text="Name"></asp:Label><span class="mandatory">*</span>
             <asp:TextBox for="Label1" class="form-control" ID="TextBox1" runat="server"></asp:TextBox>
@@ -14,7 +15,7 @@
             <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Invalid email" ControlToValidate="TextBox2" Display="Dynamic" ForeColor="Red" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
         </div>
         <div class="form-group">
-            <asp:Label ID="Label3" runat="server" Text="Zipcode"></asp:Label><span class="mandatory">*</span>
+            <asp:Label ID="Label3" runat="server" Text="Zipcode" ForeColor="Red"></asp:Label><span class="mandatory">*</span>
             <asp:TextBox for="Label3" class="form-control" ID="TextBox3" runat="server"></asp:TextBox>
             <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ErrorMessage="Invalid Zipcode!" Display="Dynamic" ControlToValidate="TextBox3" ForeColor="Red" ValidationExpression="^[1-9]{1}[0-9]{5}$"></asp:RegularExpressionValidator>
         </div>

@@ -72,5 +72,6 @@
         </div>
 
     </form>
+    <script src="Scripts/Validation.js"></script>
 </body>
 </html>

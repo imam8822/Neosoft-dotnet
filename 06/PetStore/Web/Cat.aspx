@@ -10,7 +10,6 @@
               <asp:Label for="tb_Name" ID="lbl_Name" runat="server" Text="Name" class="col-sm-2 col-form-label"></asp:Label>
             <div class="col-sm-10">
                 <asp:TextBox ID="tb_Name" runat="server" class="form-control" placeholder="Please enter the name of the cat"></asp:TextBox>
-
             </div>
           </div>
           <div class="form-group row">
@@ -62,7 +61,6 @@
           </div>
 
             <asp:Label ID="lbl_Display" runat="server" Text=""></asp:Label>
-
     </form>
     </div>
 
