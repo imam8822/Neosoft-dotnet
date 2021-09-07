@@ -73,5 +73,6 @@
 
     </form>
     <script src="Scripts/Validation.js"></script>
+    <script src="Scripts/Common.js"></script>
 </body>
 </html>
