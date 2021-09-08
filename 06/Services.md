@@ -16,7 +16,7 @@
 - Advantages of SOA: Service Resuablity, Easy maintainance, Platform independance, Availibilty, reliability, Scalability
 - Disadvantages of SOA: load balancing, High costs and investments involved, High Overload could also because of network latency
 - SOA can be implemented in 2 ways:
-    - [SOAP Service]()-> a web service which uses XML format when it comes to exchanging of messages over various protocols (Http(s), TCP, MSMQ, named Pipes).
+    - [SOAP Service](https://www.guru99.com/soap-simple-object-access-protocol.html)-> a web service which uses XML format when it comes to exchanging of messages over various protocols (Http(s), TCP, MSMQ, named Pipes).
         - In .Net Framework use [WCF](https://www.tutorialspoint.com/wcf/wcf_architecture.htm) (Windows Communication Foundation) or [Asp.Net web Service](https://www.javatpoint.com/web-services-in-c-sharp)(old version of SOAP in .Net, before WCF came)
             - Communication between consumer and provider happens on SOAP Packet (XML data)
             - WCF Contracts:
