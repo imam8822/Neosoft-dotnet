@@ -14,3 +14,7 @@
   - ValidationSummary 
   - CustomValidator
     - Use BaseValidator class to implement custom validator
+
+## Ajax
+- Asynchronous JavaScript and XML
+- in JS XMLHttpRequest object was used to make server side calls.
