@@ -4,28 +4,33 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Web.Models;
+using Data.Entities;
+using Data;
 
 namespace Web.Controllers
 {
     public class PetController : Controller
     {
+        CatRepository repo;
+        public PetController()
+        {
+            repo = new CatRepository(new PetModel());
+        }
         // GET: Pet
         public ActionResult Index()
         {
-            return View(GetCats());
+            var cats = repo.GetCats();
+            var data = new List<Web.Models.Cat>();
+            foreach (var c in cats)
+            {               
+                data.Add(Mapper.Map(c));
+            }
+            return View(data);
         }
-        [NonAction]
-        public IEnumerable<Cat> GetCats()
+        public ActionResult GetCatById(int id)
         {
-            List<Cat> cats = new List<Cat>()
-            {
-                new Cat(){Id=1, Name="Kitty", Gender=Gender.Female},
-                new Cat(){Id=2, Name="Billy", Gender=Gender.Female},
-                new Cat(){Id=3, Name="Tome", Gender=Gender.Male},
-                new Cat(){Id=4, Name="Meow", Gender=Gender.Male},
-                new Cat(){Id=5, Name="Lofer", Gender=Gender.Male}
-            };
-            return cats;
+            var cat = repo.GetCatById(id);
+            return View(Mapper.Map(cat));
         }
     }
 }
