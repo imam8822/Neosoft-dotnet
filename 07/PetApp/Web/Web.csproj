@@ -177,6 +177,8 @@
     <Content Include="Views\Pet\Index.cshtml" />
     <Content Include="Views\Pet\GetCatById.cshtml" />
     <Content Include="Views\Pet\Create.cshtml" />
+    <Content Include="Views\Pet\Edit.cshtml" />
+    <Content Include="Views\Shared\_TimePartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

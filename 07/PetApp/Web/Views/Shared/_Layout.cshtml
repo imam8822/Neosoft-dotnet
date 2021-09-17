@@ -33,12 +33,12 @@
         <hr />
         <footer>
             <p>&copy; @DateTime.Now.Year - Pet Application</p>
+            @Html.Partial("_TimePartial")
         </footer>
     </div>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
-    @RenderSection("time", required:false)
 </body>
 </html>

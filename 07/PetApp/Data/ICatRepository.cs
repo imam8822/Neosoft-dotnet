@@ -10,9 +10,9 @@ namespace Data
     interface ICatRepository
     {
         IEnumerable<Cat> GetCats();
-        Cat GetCatById(int id);
+        Cat GetCatById(int? id);
         void AddCat(Cat cat);
-        void UpdateCat(int id);
+        Cat UpdateCat(int? id);
         void DeleteCat(int id);
         void Save();
     }

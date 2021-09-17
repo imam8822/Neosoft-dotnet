@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
-
+using System.Web.Mvc;
 
 namespace Web.Models
 {
@@ -11,6 +11,8 @@ namespace Web.Models
     }
     public class CatViewModel
     {
+        [HiddenInput]
+        public int Id { get; set; }
         [Required(ErrorMessage ="Name cannot be blank")]
         [StringLength(maximumLength: 50,ErrorMessage ="name of the cat should be between 2 to 50 characters", MinimumLength =2)]
         public string Name { get; set; }
@@ -29,10 +31,10 @@ namespace Web.Models
         public decimal? ribLength { get; set; }
         [Required(ErrorMessage = "Please select cat type")]
         [DisplayName("Cat type")]
-        public int CatType { get; set; }
+        public int? CatType { get; set; }
         [Required(ErrorMessage = "Please select fur type")]
         [DisplayName("Fur type")]
-        public int FurType { get; set; }
+        public int? FurType { get; set; }
 
     }
 }

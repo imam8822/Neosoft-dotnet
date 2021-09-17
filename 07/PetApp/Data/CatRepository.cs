@@ -35,9 +35,9 @@ namespace Data
                 throw new ArgumentException("Cat is not found");
         }
 
-        public Cat GetCatById(int id)
+        public Cat GetCatById(int? id)
         {
-            if (id > 0)
+            if (id > 0 && id != null)
             {
                 var cat = db.Cats
                     .Include(g => g.Gender)
@@ -63,17 +63,17 @@ namespace Data
                     .ToList();            
         }
 
-        public void UpdateCat(int id)
+        public Cat UpdateCat(int? id)
         {
             var cat = db.Cats.Find(id);
             if (cat != null)
             {
-                db.Cats.AddOrUpdate(cat);
+                db.Entry(cat).State = EntityState.Modified;
                 Save();
+                return cat;
             }
             else
-                throw new ArgumentException("Cat is not found");
-
+                return cat;
         }
         public void Save()
         {
