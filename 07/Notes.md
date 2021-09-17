@@ -23,13 +23,18 @@
 
 ## Views
 - Consists of UI logic
+- Extension .cshtml, processed by [Razor Engine](https://docs.microsoft.com/en-us/aspnet/web-pages/overview/getting-started/introducing-razor-syntax-c)
 - Types of Views:
   - Static View : Plain HTML 
   - Weakly-Typed Views : Which uses View Bag and View Data
   - Strongly-Type Views : Which is binded to a model
   - Dynamic Typed Views : which are not binded to a model but the model is passed to view via controller and View automatically identify the model type as dynamic
 
-
+## Passing Data in MVC
+- Action to View/ Controller to View -> ViewBag, ViewData
+- Controller to Controller - TempData, it is normally used for 1 read only. If you want to preserve it for 2nd read then use the method TempData.Keep().
+- Session can be for entire request session.
+- Model
 ## [Entity Framework 6](https://docs.microsoft.com/en-us/ef/ef6/)
 - [LINQ](https://www.tutorialsteacher.com/linq/linq-tutorials)
 - ### References

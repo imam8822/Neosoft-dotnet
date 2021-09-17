@@ -27,10 +27,16 @@ namespace Web.Controllers
             }
             return View(data);
         }
+        // GET:PetById
         public ActionResult GetCatById(int id)
         {
             var cat = repo.GetCatById(id);
             return View(Mapper.Map(cat));
+        }
+        // GET:Form
+        public ViewResult Create()
+        {
+            return View();
         }
     }
 }
