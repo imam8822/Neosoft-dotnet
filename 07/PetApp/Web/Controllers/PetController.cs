@@ -22,7 +22,7 @@ namespace Web.Controllers
             var cats = repo.GetCats();
             var data = new List<Web.Models.Cat>();
             foreach (var c in cats)
-            {               
+            {
                 data.Add(Mapper.Map(c));
             }
             return View(data);
@@ -34,9 +34,23 @@ namespace Web.Controllers
             return View(Mapper.Map(cat));
         }
         // GET:Form
+        [HttpGet]
         public ViewResult Create()
         {
+            ViewBag.CatType=new SelectList(repo.getCatType(),"Id","Name");
+            ViewBag.FurType = new SelectList(repo.getFurType(), "Id", "Name");
             return View();
         }
+        [HttpPost]
+        public ActionResult Create(CatViewModel cat)
+        {
+            if (ModelState.IsValid)
+            {
+                repo.AddCat(Mapper.Map(cat));
+                return RedirectToAction("Index");
+            }
+            return View(cat);
+        }
+
     }
 }

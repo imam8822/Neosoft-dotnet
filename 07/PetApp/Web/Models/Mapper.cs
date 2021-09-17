@@ -23,5 +23,18 @@ namespace Web.Models
                 ribCage = cat.ribcage
             };
         }
+        public static Data.Entities.Cat Map(Web.Models.CatViewModel cat)
+        {
+            return new Data.Entities.Cat()
+            {
+                Name = cat.Name,
+                Dob = cat.Dob,
+                legLength=cat.legLength,
+                ribcage=cat.ribLength,
+                GenderId=cat.GenderId,
+                CatType=cat.CatType,
+                FurType=cat.FurType
+            };
+        }
     }
 }

@@ -79,5 +79,13 @@ namespace Data
         {
             db.SaveChanges();
         }
+        public IEnumerable<catType> getCatType()
+        {
+            return db.catTypes.ToList();
+        }
+        public IEnumerable<FurType> getFurType()
+        {
+            return db.FurTypes.ToList();
+        }
     }
 }
