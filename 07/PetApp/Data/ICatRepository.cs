@@ -12,7 +12,7 @@ namespace Data
         IEnumerable<Cat> GetCats();
         Cat GetCatById(int? id);
         void AddCat(Cat cat);
-        Cat UpdateCat(int? id);
+        Cat UpdateCat(Cat cats);
         void DeleteCat(int id);
         void Save();
     }

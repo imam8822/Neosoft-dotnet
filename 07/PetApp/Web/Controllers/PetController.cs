@@ -7,6 +7,7 @@ using Web.Models;
 using Data.Entities;
 using Data;
 using System.Net;
+using Cat = Data.Entities.Cat;
 
 namespace Web.Controllers
 {
@@ -42,7 +43,7 @@ namespace Web.Controllers
         [HttpGet]
         public ViewResult Create()
         {
-            ViewBag.CatType=new SelectList(repo.getCatType(),"Id","Name");
+            ViewBag.CatType = new SelectList(repo.getCatType(), "Id", "Name");
             ViewBag.FurType = new SelectList(repo.getFurType(), "Id", "Name");
             return View();
         }
@@ -63,7 +64,17 @@ namespace Web.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             var cat = repo.GetCatById(id);
             if (cat == null)
+            {
                 return HttpNotFound();
+            }
+            else
+            {
+                ViewBag.CatType = new SelectList(repo.getCatType(), "Id", "Name",cat.CatType);
+                TempData["CatType"] = cat.CatType;
+                ViewBag.FurType = new SelectList(repo.getFurType(), "Id", "Name", cat.FurType);
+                TempData["FurType"] = cat.FurType;
+                TempData["Dob"] = cat.Dob?.ToString("MM/dd/yyyy");
+            }
             return View(Mapper.MapCVM(cat));
         }
         [HttpPost]
@@ -71,7 +82,16 @@ namespace Web.Controllers
         {
             if (ModelState.IsValid)
             {
-                repo.UpdateCat(cat.Id);
+                Cat update = new Cat();
+                update.Id = cat.Id;
+                update.Name = cat.Name;
+                update.Dob = cat.Dob;
+                update.legLength = cat.legLength;
+                update.ribcage = cat.ribLength;
+                update.GenderId = cat.GenderId;
+                update.CatType = cat.CatType;
+                update.FurType = cat.FurType;
+                repo.UpdateCat(update);
                 return RedirectToAction("Index");
             }
             return View(cat);
