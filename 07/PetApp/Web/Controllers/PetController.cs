@@ -11,6 +11,7 @@ using Cat = Data.Entities.Cat;
 
 namespace Web.Controllers
 {
+    [HandleError]
     public class PetController : Controller
     {
         CatRepository repo;
@@ -19,6 +20,7 @@ namespace Web.Controllers
             repo = new CatRepository(new PetModel());
         }
         // GET: Pet
+        [OutputCache(Duration =10,VaryByParam ="none")]
         public ActionResult Index()
         {
             var cats = repo.GetCats();
@@ -30,6 +32,12 @@ namespace Web.Controllers
             return View(data);
         }
         // GET:PetById
+        /// <summary>
+        /// Gets value from Route(URL) or the Query string
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        //[Authorize]
         public ActionResult GetCatById(int? id)
         {
             if (id == null)

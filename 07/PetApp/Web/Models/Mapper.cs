@@ -16,7 +16,7 @@ namespace Web.Models
             {
                 Id = cat.Id,
                 Name = cat.Name,
-                Dob = cat.Dob,//DateTime.Parse(cat.Dob?.ToString("MM/dd/yyyy")),
+                Dob = cat.Dob,
                 Gender = cat.Gender.Name,
                 CatType = cat.catType1.Name,
                 FurType = cat.FurType1.Name,
