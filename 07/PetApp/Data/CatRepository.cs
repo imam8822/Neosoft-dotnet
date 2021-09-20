@@ -65,9 +65,7 @@ namespace Data
 
         public Cat UpdateCat(Cat cats)
         {
-            using (PetModel entities = new PetModel())
-            {
-                Cat updatedCat = (from c in entities.Cats
+             Cat updatedCat = (from c in db.Cats
                                   where c.Id == cats.Id
                                   select c).FirstOrDefault();
                 updatedCat.Name = cats.Name;
@@ -77,8 +75,8 @@ namespace Data
                 updatedCat.GenderId = cats.GenderId;
                 updatedCat.CatType = cats.CatType;
                 updatedCat.FurType = cats.FurType;
-                entities.SaveChanges();
-            }
+            Save();
+            
             return cats;
         }
         public void Save()

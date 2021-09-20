@@ -17,7 +17,7 @@ namespace Web
             routes.MapRoute(
                 name: "Pet",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Pet", action = "Home", id = UrlParameter.Optional }
+                defaults: new { controller = "Pet", action = "Index", id = UrlParameter.Optional }
                 );
 
             //routes.MapRoute(
