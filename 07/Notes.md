@@ -35,6 +35,10 @@
 - Controller to Controller - TempData, it is normally used for 1 read only. If you want to preserve it for 2nd read then use the method TempData.Keep().
 - Session can be for entire request session.
 - Model
+
+## Miscellaneous Topics
+- [Model Binding](https://www.c-sharpcorner.com/article/custom-model-binding-in-asp-net-mvc/)
+  - ModelBinder maps http requests from view data to the model. The MVC runtime uses Default ModelBinder to build the model parameters. This is done automatically by MVC Model Binder.
 ## [Entity Framework 6](https://docs.microsoft.com/en-us/ef/ef6/)
 - [LINQ](https://www.tutorialsteacher.com/linq/linq-tutorials)
 - ### References

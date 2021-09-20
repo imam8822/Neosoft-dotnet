@@ -82,16 +82,7 @@ namespace Web.Controllers
         {
             if (ModelState.IsValid)
             {
-                Cat update = new Cat();
-                update.Id = cat.Id;
-                update.Name = cat.Name;
-                update.Dob = cat.Dob;
-                update.legLength = cat.legLength;
-                update.ribcage = cat.ribLength;
-                update.GenderId = cat.GenderId;
-                update.CatType = cat.CatType;
-                update.FurType = cat.FurType;
-                repo.UpdateCat(update);
+                repo.UpdateCat(Mapper.Map(cat));
                 return RedirectToAction("Index");
             }
             return View(cat);
