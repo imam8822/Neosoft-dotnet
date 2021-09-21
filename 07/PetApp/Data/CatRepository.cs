@@ -78,8 +78,7 @@ namespace Data
                 updatedCat.GenderId = cats.GenderId;
                 updatedCat.CatType = cats.CatType;
                 updatedCat.FurType = cats.FurType;
-            Save();
-            
+            Save();            
             return cats;
         }
         public void Save()

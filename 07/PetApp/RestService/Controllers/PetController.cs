@@ -18,7 +18,7 @@ namespace RestService.Controllers
             repo = new CatRepository(new PetModel());
         }
         [HttpGet]
-        
+
         public IHttpActionResult Get()
         {
             var cats = repo.GetCats();
@@ -37,7 +37,7 @@ namespace RestService.Controllers
         [HttpGet]
         public IHttpActionResult Get(int id)
         {
-            var cat=repo.GetCatById(id);
+            var cat = repo.GetCatById(id);
             if (cat != null)
             {
                 return Ok(Mapper.Map(cat));
@@ -51,7 +51,33 @@ namespace RestService.Controllers
             if (!ModelState.IsValid)
                 return BadRequest("Ibvalid data");
             repo.AddCat(Mapper.Map(cat));
-            return Created<CatModel>("Post",cat);
+            return Created<CatModel>("Post", cat);
+        }
+        [HttpPut]
+        public IHttpActionResult Put(CatModel cat)
+        {
+            var catFound = repo.GetCatById(cat.Id);
+            if (catFound != null)
+            {
+                repo.UpdateCat(Mapper.Map(cat));
+                return Ok();
+            }
+            else
+                return NotFound();
+        }
+        [HttpDelete]
+        public IHttpActionResult Delete(int id)
+        {
+            if (id <= 0)
+                return BadRequest();
+            var catFound = repo.GetCatById(id);
+            if (catFound != null)
+            {
+                repo.DeleteCat(id);
+                return Ok();
+            }
+            else
+                return NotFound();
         }
     }
 }
