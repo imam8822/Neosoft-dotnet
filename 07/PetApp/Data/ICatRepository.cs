@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Data
 {
-    interface ICatRepository
+    public interface ICatRepository
     {
         IEnumerable<Cat> GetCats();
         Cat GetCatById(int? id);

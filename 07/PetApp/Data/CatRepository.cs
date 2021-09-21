@@ -16,6 +16,7 @@ namespace Data
         public CatRepository(PetModel db)
         {
             this.db = db;
+            db.Configuration.ProxyCreationEnabled = false;
         }
         public void AddCat(Cat cat)
         {
@@ -60,6 +61,8 @@ namespace Data
         {
             return db.Cats
                     .Include("Gender")
+                    .Include("catType1")
+                    .Include("FurType1")
                     .ToList();
         }
 
