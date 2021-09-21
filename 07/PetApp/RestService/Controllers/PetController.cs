@@ -45,5 +45,13 @@ namespace RestService.Controllers
             else
                 return NotFound();
         }
+        [HttpPost]
+        public IHttpActionResult Post(CatModel cat)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest("Ibvalid data");
+            repo.AddCat(Mapper.Map(cat));
+            return Created<CatModel>("Post",cat);
+        }
     }
 }
