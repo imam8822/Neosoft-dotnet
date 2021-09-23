@@ -1,3 +1,4 @@
+using CoreMVC.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -9,6 +10,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Data.Entities;
+using Microsoft.EntityFrameworkCore;
 
 namespace CoreMVC
 {
@@ -24,7 +27,9 @@ namespace CoreMVC
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllersWithViews();            
+            services.AddControllersWithViews();
+            services.AddDbContext<SuperHeroContext>(options=>
+            options.UseSqlServer(Configuration.GetConnectionString("SuperHeroDb")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
