@@ -12,6 +12,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Data.Entities;
 using Microsoft.EntityFrameworkCore;
+using Data;
 
 namespace CoreMVC
 {
@@ -30,6 +31,7 @@ namespace CoreMVC
             services.AddControllersWithViews();
             services.AddDbContext<SuperHeroContext>(options=>
             options.UseSqlServer(Configuration.GetConnectionString("SuperHeroDb")));
+            services.AddScoped<IRepository, Repository>();// this method is going to create an instance of DbContext for every new request, you can use Singleton and transient ones too
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

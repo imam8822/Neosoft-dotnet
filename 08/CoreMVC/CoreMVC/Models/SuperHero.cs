@@ -17,7 +17,7 @@ namespace CoreMVC.Models
         [DisplayName("Place of hiding")]
         public string hideOuts { get; set; }
 
-        public static IEnumerable<SuperHero> getDummySuperHeros()
+        /*public static IEnumerable<SuperHero> getDummySuperHeros()
         {
             List<SuperHero> superHeroes = new List<SuperHero>()
             {
@@ -27,6 +27,6 @@ namespace CoreMVC.Models
                 new SuperHero(){id=4, name="Gangadhar", alias="Shaktiman", hideOuts="tenant in a village"}
             };
             return superHeroes;
-        }
+        }*/
     }
 }

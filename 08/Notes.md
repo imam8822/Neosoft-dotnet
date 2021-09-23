@@ -24,7 +24,7 @@ Install the listed packages in your DL project:
 Other things you'll need with DBFirst:
 - A Mapper to map your DB entities to BL entities
 
-### Code First Steps
+### [Code First Steps](https://www.entityframeworktutorial.net/code-first/what-is-code-first.aspx)
 1. Have the following:
     - Data Layer
     - The necessary packages installed in DL project
