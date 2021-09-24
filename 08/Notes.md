@@ -1,6 +1,7 @@
 ## [REST API](https://restfulapi.net/)
 ## [Asp.Net Web API](https://www.tutorialsteacher.com/webapi)
-## [EF Core]()
+## [EF Core](https://www.entityframeworktutorial.net/code-first/inheritance-strategy-in-code-first.aspx)
+- Most conventions and steps for EFCore Code first and EF6 are same
 ### Packages
 Install the listed packages in your DL project:
 - ```dotnet add package Microsoft.EntityFrameworkCore.Tools``` or ```Install-Package Microsoft.EntityFrameworkCore.Tools```

@@ -16,6 +16,7 @@ namespace CoreMVC.Models
         public string alias { get; set; }
         [DisplayName("Place of hiding")]
         public string hideOuts { get; set; }
+        public List<SuperPower> superPowers { get; set; }
 
         /*public static IEnumerable<SuperHero> getDummySuperHeros()
         {

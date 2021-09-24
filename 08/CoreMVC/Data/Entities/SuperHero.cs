@@ -27,6 +27,7 @@ namespace Data.Entities
         [StringLength(150)]
         [Column("hideout")]
         public string HideOuts { get; set; }
+        public ICollection<SuperPower> SuperPowers { get; set; }
 
     }
 }

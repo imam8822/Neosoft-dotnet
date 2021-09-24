@@ -24,6 +24,10 @@
             <th>
                 @Html.DisplayNameFor(model => model.hideOuts)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.superPowers)
+            </th>
+            
             <th></th>
         </tr>
     </thead>
@@ -41,6 +45,14 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.hideOuts)
+            </td>
+            <td>
+                <ul>
+                    @foreach(var sp in item.superPowers)
+                    {
+                       <li>@sp.Name</li> 
+                    }
+                </ul>
             </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
