@@ -76,6 +76,7 @@ namespace CoreMVC.Controllers
             {
                 return View(sup);
             }
+        }
 
         public IActionResult Delete(int id)
         {

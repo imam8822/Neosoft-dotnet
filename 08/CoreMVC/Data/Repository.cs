@@ -44,18 +44,20 @@ namespace Data
                 _Context.Entry(superhero).State = EntityState.Modified;
                 _Context.SaveChanges();
             }
+        }
         public void DeleteSuperHeroById(int id)
-        {
-            if (id != null)
             {
-                var data = _Context.SuperHeroes.Where(s => s.Id == id).FirstOrDefault();
+                if (id >0)
+                {
+                    var data = _Context.SuperHeroes.Where(s => s.Id == id).FirstOrDefault();
 
-                _Context.Remove(data);
-                _Context.SaveChanges();
-            }
-            else
-            {
-                throw new ArgumentException($"Cannot Found the data by that id ={id}");
+                    _Context.Remove(data);
+                    _Context.SaveChanges();
+                }
+                else
+                {
+                    throw new ArgumentException($"Cannot Found the data by that id ={id}");
+                }
             }
 
         public void AddSuperPower(SuperPower superPower)
