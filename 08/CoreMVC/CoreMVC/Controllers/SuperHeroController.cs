@@ -43,8 +43,6 @@ namespace CoreMVC.Controllers
             else
                 return View(superHero);
         }
-
-
         [HttpGet]
         public IActionResult Update(int id)
         {
@@ -78,6 +76,5 @@ namespace CoreMVC.Controllers
                 return View(sup);
             }
         }
-
     }
 }

@@ -13,5 +13,6 @@ namespace Data
         SuperHero GetSuperHeroById(int id);
         void Add(SuperHero superHero);
         void Edit(SuperHero superhero);
+        void AddSuperPower(SuperPower superPower);
     }
 }
