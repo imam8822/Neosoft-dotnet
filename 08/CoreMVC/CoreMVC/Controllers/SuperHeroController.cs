@@ -56,8 +56,15 @@ namespace CoreMVC.Controllers
        [HttpPost]
         public IActionResult Update(SuperHero sup)
         {
-            repo.Edit(Mapper.Map(sup));
-            return RedirectToAction("Index");
+            if (ModelState.IsValid)
+            {
+                repo.Edit(Mapper.Map(sup));
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                return View(sup);
+            }
         }
 
     }
