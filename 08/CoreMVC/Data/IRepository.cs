@@ -12,5 +12,7 @@ namespace Data
         IEnumerable<SuperHero> GetSuperHeroes();
         SuperHero GetSuperHeroById(int id);
         void Add(SuperHero superHero);
+
+        void AddSuperPower(SuperPower superPower);
     }
 }
