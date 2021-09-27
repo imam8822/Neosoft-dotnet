@@ -1,11 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Web;
 using System.Threading.Tasks;
 using CoreMVC.Models;
 using Microsoft.AspNetCore.Mvc;
 using Data;
+using System.Data;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
+using System.Net;
+
+
 
 namespace CoreMVC.Controllers
 {
@@ -50,10 +55,17 @@ namespace CoreMVC.Controllers
                 {
                     return View(Mapper.Map(data));
                 }
+                else
+                {
+                    return RedirectToAction("Index");
+                }
             }
-            return RedirectToAction("Index");
+            else 
+            {
+                return RedirectToAction("Index");
+            }
         }
-       [HttpPost]
+        [HttpPost]
         public IActionResult Update(SuperHero sup)
         {
             if (ModelState.IsValid)
