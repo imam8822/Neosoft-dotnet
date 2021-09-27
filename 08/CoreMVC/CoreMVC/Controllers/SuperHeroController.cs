@@ -14,6 +14,7 @@ using System.Net;
 
 namespace CoreMVC.Controllers
 {
+    [Route("[controller]/[action]")]
     public class SuperHeroController : Controller
     {
         private readonly IRepository repo;
@@ -25,6 +26,7 @@ namespace CoreMVC.Controllers
         {
             return View(Mapper.Map(repo.GetSuperHeroes()));
         }
+        [HttpGet("{id}")]
         public IActionResult Details(int id)
         {
             return View(Mapper.Map(repo.GetSuperHeroById(id)));
