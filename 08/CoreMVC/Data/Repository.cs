@@ -37,6 +37,13 @@ namespace Data
                 _Context.SaveChanges();
             }
         }
+        public void Edit(SuperHero superhero)
+        {
+            if (superhero != null)
+            {
+                _Context.Entry(superhero).State = EntityState.Modified;
+                _Context.SaveChanges();
+            }
         public void DeleteSuperHeroById(int id)
         {
             if (id != null)
