@@ -42,14 +42,14 @@ namespace Data
             if (id != null)
             {
                 var data = _Context.SuperHeroes.Where(s => s.Id == id).FirstOrDefault();
+
                 _Context.Remove(data);
                 _Context.SaveChanges();
             }
             else
             {
-                throw new ArgumentException();
+                throw new ArgumentException($"Cannot Found the data by that id ={id}");
             }
-            _Context.SaveChanges();
         }
     }
 }

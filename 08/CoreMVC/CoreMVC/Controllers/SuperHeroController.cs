@@ -39,14 +39,10 @@ namespace CoreMVC.Controllers
             else
                 return View(superHero);
         }
+
         public IActionResult Delete(int id)
         {
-            if (ModelState.IsValid)
-            {
-                repo.DeleteSuperHeroById(id);
-            }
-            else
-                return Content("<script language='javascript' type='text/javascript'>Cannot remove {id}</script>");
+            repo.DeleteSuperHeroById(id);
             return RedirectToAction("Index");
         }
     }
