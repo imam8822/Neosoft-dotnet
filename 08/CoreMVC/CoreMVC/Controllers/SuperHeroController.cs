@@ -51,7 +51,7 @@ namespace CoreMVC.Controllers
                     return View(Mapper.Map(data));
                 }
             }
-            return View();
+            return RedirectToAction("Index");
         }
        [HttpPost]
         public IActionResult Update(SuperHero sup)
