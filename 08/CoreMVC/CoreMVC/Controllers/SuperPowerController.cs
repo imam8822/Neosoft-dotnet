@@ -24,8 +24,7 @@ namespace CoreMVC.Controllers
         {
             if (ModelState.IsValid)
             {
-                var hero = repo.GetSuperHeroById(id);
-                repo.AddSuperPower(Mapper.Map(superPower, hero));
+                repo.AddSuperPower(Mapper.Map(superPower,id));
                 return RedirectToAction("Index", "SuperHero");
             }
             else
