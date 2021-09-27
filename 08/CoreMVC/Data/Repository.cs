@@ -10,6 +10,7 @@ namespace Data
     public class Repository : IRepository
     {
         SuperHeroContext _Context;
+
         public Repository(SuperHeroContext context)
         {
             _Context = context;
@@ -22,7 +23,7 @@ namespace Data
         {
             if (id > 0)
             {
-                var x= _Context.SuperHeroes.Where(s => s.Id == id).Include("SuperPowers").FirstOrDefault();
+                var x = _Context.SuperHeroes.Where(s => s.Id == id).Include("SuperPowers").FirstOrDefault();
                 return x;
             }
             else
@@ -35,6 +36,20 @@ namespace Data
                 _Context.Add(superHero);
                 _Context.SaveChanges();
             }
+        }
+        public void DeleteSuperHeroById(int id)
+        {
+            if (id != null)
+            {
+                var data = _Context.SuperHeroes.Where(s => s.Id == id).FirstOrDefault();
+                _Context.Remove(data);
+                _Context.SaveChanges();
+            }
+            else
+            {
+                throw new ArgumentException();
+            }
+            _Context.SaveChanges();
         }
     }
 }
