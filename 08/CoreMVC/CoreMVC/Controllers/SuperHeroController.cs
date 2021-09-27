@@ -31,13 +31,19 @@ namespace CoreMVC.Controllers
         [HttpPost]
         public IActionResult Add(SuperHero superHero)
         {
-            if (ModelState.IsValid) {
+            if (ModelState.IsValid)
+            {
                 repo.Add(Mapper.Map(superHero));
                 return RedirectToAction("Index");
             }
             else
                 return View(superHero);
         }
-        
+
+        public IActionResult Delete(int id)
+        {
+            repo.DeleteSuperHeroById(id);
+            return RedirectToAction("Index");
+        }
     }
 }
