@@ -38,5 +38,27 @@ namespace CoreMVC.Controllers
             else
                 return View(superHero);
         }
+
+
+        [HttpGet]
+        public IActionResult Update(int id)
+        {
+            if (id > 0)
+            {
+                var data = repo.GetSuperHeroById(id);
+                if (data != null)
+                {
+                    return View(Mapper.Map(data));
+                }
+            }
+            return View();
+        }
+       [HttpPost]
+        public IActionResult Update(SuperHero sup)
+        {
+            repo.Edit(Mapper.Map(sup));
+            return RedirectToAction("Index");
+        }
+
     }
 }
