@@ -50,6 +50,11 @@ namespace Data
             {
                 throw new ArgumentException($"Cannot Found the data by that id ={id}");
             }
+
+        public void AddSuperPower(SuperPower superPower)
+        {
+            _Context.Add(superPower);
+            _Context.SaveChanges();
         }
     }
 }
