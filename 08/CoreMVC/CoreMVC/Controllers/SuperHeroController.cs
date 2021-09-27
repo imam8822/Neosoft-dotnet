@@ -36,7 +36,8 @@ namespace CoreMVC.Controllers
         [HttpPost]
         public IActionResult Add(SuperHero superHero)
         {
-            if (ModelState.IsValid) {
+            if (ModelState.IsValid)
+            {
                 repo.Add(Mapper.Map(superHero));
                 return RedirectToAction("Index");
             }
@@ -75,6 +76,11 @@ namespace CoreMVC.Controllers
             {
                 return View(sup);
             }
+
+        public IActionResult Delete(int id)
+        {
+            repo.DeleteSuperHeroById(id);
+            return RedirectToAction("Index");
         }
     }
 }
