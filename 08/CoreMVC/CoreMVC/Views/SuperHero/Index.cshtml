@@ -56,10 +56,10 @@
 					    <li>@sp.Name</li>
 					}
 			</ul>
-			<a asp-action="Add" asp-controller="SuperPower" asp-route-id=@item.id>Add more super power</a>
+			<a asp-action="AddSuperPower" asp-controller="SuperPower" asp-route-id=@item.id>Add more super power</a>
 			}
 			@if(item.superPowers.Count == 0){
-				<a asp-action="Add" asp-controller="SuperPower" asp-route-id=@item.id>Add super power</a>
+				<a asp-action="AddSuperPower" asp-controller="SuperPower" asp-route-id=@item.id>Add super power</a>
 				}
 		</td>
 	   <td>

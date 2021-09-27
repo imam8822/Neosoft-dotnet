@@ -36,5 +36,11 @@ namespace Data
                 _Context.SaveChanges();
             }
         }
+
+        public void AddSuperPower(SuperPower superPower)
+        {
+            _Context.Add(superPower);
+            _Context.SaveChanges();
+        }
     }
 }
