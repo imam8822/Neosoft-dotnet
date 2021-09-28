@@ -168,9 +168,9 @@ namespace Web.Controllers
             var url = string.Format("/Home/Activation/{0}", code);
             var link = Request.Url.AbsoluteUri.Replace(Request.Url.PathAndQuery, url);
 
-            var fromEmail = new MailAddress("pskhaira27@gmail.com", "Activation Account - Pet Application");
+            var fromEmail = new MailAddress("ps@gmail.com", "Activation Account - Pet Application");
             var toEmail = new MailAddress(email);
-            var fromEmailPassword = "Password.1";
+            var fromEmailPassword = "";
             string subject = "Activation Account !";
             string body = "<br/> Please click on the link for" + "<br/> <a href='" + link + "'> Account Activation !</a>";
 
